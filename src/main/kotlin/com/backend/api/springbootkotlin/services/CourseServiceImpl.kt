@@ -22,4 +22,22 @@ class CourseServiceImpl : CourseService {
             it == courses
         } ?: Courses(0, "", "")
     }
+
+    override fun editCourse(courses: Courses): Courses {
+        CourseList.courseList.forEach {
+            if(it.id == courses.id){
+                it.title = courses.title
+                it.description = courses.description
+            }
+        }
+        return CourseList.courseList.find {
+            it == courses
+        } ?: Courses(0, "", "")
+    }
+
+    override fun deleteCourse(courseID: Int): Boolean {
+        return CourseList.courseList.removeIf {
+            it.id == courseID
+        }
+    }
 }
