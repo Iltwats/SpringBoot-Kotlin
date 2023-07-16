@@ -1,7 +1,7 @@
 package com.backend.api.springbootkotlin.model
 
 object CourseList {
-    val courseList = mutableListOf(
+    var courseList = mutableListOf(
         Courses(12, "name", "desc"),
         Courses(13, "neme6", "derc"),
         Courses(14, "neme7", "derc"),
